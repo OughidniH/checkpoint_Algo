@@ -1,0 +1,22 @@
+ALGORITHM nombre_caractere
+VAR
+    phrase:STRING;
+    Nb_caractere:INTEGER:=0;
+    Nb_voyelle:INTEGER:=0;
+    Nb_mots:INTEGER:=1;
+    c:CHAR:=" ";
+BEGIN
+    FOR i FROM 0 TO length(phrase) STEP step  DO
+       c:=phrase[i];
+       Nb_caractere:=Nb_caractere + 1;
+       IF (c="a" ou c="e" ou c="i" ou c="o" ou c="u") THEN
+        Nb_voyelle:= Nb_voyelle + 1;
+       END_IF
+       IF (c=" ") THEN
+            Nb_mots:=Nb_mots + 1;
+        END_IF
+    END_FOR
+  WRITE("Le nombre de caractères dans la phrase est ", Nb_caractere);
+  WRITE("Le nombre de voyelle dans la phrase est ", Nb_voyelle);
+  WRITE("Le nombre de mots dans la phrase est ", Nb_mots);
+END
